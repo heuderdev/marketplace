@@ -2,25 +2,26 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use MercadoPago\Client\Preference\PreferenceClient;
 use MercadoPago\Exceptions\MPApiException;
 use MercadoPago\MercadoPagoConfig;
+use MercadoPago\Resources\Preference;
 
 class MercadoPagoService
 {
     public function __construct()
     {
-        // Acesso token pode ser configurado direto do config('app.MP_ACCESS_TOKEN')
         MercadoPagoConfig::setAccessToken(config('app.MP_ACCESS_TOKEN'));
     }
 
     /**
-     * Cria preference personalizada para Checkout Pro e retorna a URL.
-     * Retorna "null" se houver erro na API.
+     * Cria preference personalizada para Checkout Pro e retorna o objeto Preference.
+     * @param array{name: string, quantity: int, price: float|int, order_id: string} $product
+     * @return Preference|null Retorna Preference ou null se erro na API.
+     * @throws \Exception
      */
-    public function createCheckoutUrl(array $product): \MercadoPago\Resources\Preference
+    public function createCheckoutUrl(array $product): ?Preference
     {
         $client = new PreferenceClient();
         $request = [
@@ -28,11 +29,11 @@ class MercadoPagoService
                 [
                     "title" => $product['name'],
                     "quantity" => $product['quantity'],
-                    "unit_price" => (float)$product['price'],
+                    "unit_price" => (float) $product['price'],
                     "currency_id" => "BRL"
                 ]
             ],
-            'external_reference' => auth()->id()."|".$product['order_id'],
+            'external_reference' => auth()->id() . "|" . $product['order_id'],
             "payment_methods" => [],
             "back_urls" => [
                 "success" => config('app.url') . "/pagamento/success",
@@ -44,7 +45,6 @@ class MercadoPagoService
 
         try {
             return $client->create($request);
-
         } catch (MPApiException $e) {
             Log::error('MercadoPago Preference Error', [
                 'code' => $e->getApiResponse()->getStatusCode(),
