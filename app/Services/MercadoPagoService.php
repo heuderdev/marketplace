@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use MercadoPago\Client\Preference\PreferenceClient;
 use MercadoPago\Exceptions\MPApiException;
@@ -31,7 +32,7 @@ class MercadoPagoService
                     "currency_id" => "BRL"
                 ]
             ],
-            'external_reference' => $product['order_id'],
+            'external_reference' => auth()->id()."|".$product['order_id'],
             "payment_methods" => [],
             "back_urls" => [
                 "success" => config('app.url') . "/pagamento/success",

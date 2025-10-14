@@ -7,11 +7,11 @@ use App\Models\Product;
 use App\Services\MercadoPagoService;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class ProductList extends Component
 {
-
     public $products;
 
     public function mount(): void
@@ -39,7 +39,7 @@ class ProductList extends Component
             'price' => $product->price,
             "order_id" => (string)$order->id,
         ]);
-
+        Log::debug(json_encode($checkoutUrl));
         return redirect($checkoutUrl->init_point);
 
     }

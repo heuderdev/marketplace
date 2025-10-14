@@ -1,0 +1,126 @@
+{
+    "id": 129261566861,
+    "acquirer_reconciliation": [],
+    "sponsor_id": null,
+    "operation_type": "regular_payment",
+    "order": {
+      "id": 34727864557,
+      "type": "mercadopago"
+    },
+    "brand_id": null,
+    "build_version": "3.127.0-rc-1",
+    "binary_mode": false,
+    "external_reference": "1|14",
+    "financing_group": null,
+    "status": "approved",
+    "status_detail": "accredited",
+    "store_id": null,
+    "taxes_amount": 0,
+    "date_created": "2025-10-13T22:03:32.000-04:00",
+    "live_mode": true,
+    "date_last_updated": "2025-10-13T22:04:00.000-04:00",
+    "date_of_expiration": "2025-10-14T22:03:32.000-04:00",
+    "deduction_schema": null,
+    "date_approved": "2025-10-13T22:03:51.000-04:00",
+    "money_release_date": "2025-10-13T22:03:51.000-04:00",
+    "money_release_schema": null,
+    "money_release_status": "released",
+    "currency_id": "BRL",
+    "transaction_amount": 0.5,
+    "transaction_amount_refunded": 0,
+    "collector_id": 214455304,
+    "counter_currency": null,
+    "payment_method_id": "pix",
+
+    "payment_type_id": "bank_transfer",
+    "pos_id": null,
+    "transaction_details": {
+      "financial_institution": "1",
+      "net_received_amount": 0.5,
+      "total_paid_amount": 0.5,
+      "installment_amount": 0,
+      "overpaid_amount": 0,
+      "external_resource_url": null,
+      "payment_method_reference_id": null,
+      "acquirer_reference": null,
+      "payable_deferral_period": null,
+      "bank_transfer_id": "118937656239",
+      "transaction_id": "PIXE32430233202510140203Lg1nBkG9Rqp"
+    },
+    "fee_details": [],
+    "differential_pricing_id": null,
+    "authorization_code": null,
+    "captured": true,
+    "card": [],
+    "call_for_authorize_id": null,
+    "statement_descriptor": null,
+    "shipping_amount": 0,
+    "additional_info": {
+      "ip_address": "38.41.194.76",
+      "tracking_id": "platform:v1-whitelabel,so:ALL,type:N/A,security:none",
+      "items": [
+        {
+          "title": "Laravel Dominado",
+          "quantity": 1,
+          "unit_price": 0.5,
+          "map": {
+            "category_descriptor": "MercadoPago\\Resources\\Preference\\CategoryDescriptor"
+          }
+        }
+      ]
+    },
+    "coupon_amount": 0,
+    "installments": 1,
+    "description": "Laravel Dominado",
+    "notification_url": null,
+    "issuer_id": "12501",
+    "processing_mode": "aggregator",
+    "merchant_account_id": null,
+    "merchant_number": null,
+    "metadata": [],
+    "callback_url": null,
+    "release_info": null,
+    "marketplace_owner": null,
+    "integrator_id": null,
+    "corporation_id": null,
+    "platform_id": null,
+    "charges_details": [],
+    "point_of_interaction": {
+      "type": "CHECKOUT",
+      "sub_type": "INTER_PSP",
+      "application_data": {
+        "name": "checkout-off",
+        "version": "v2"
+      },
+      "transaction_data": {
+        "qr_code": "00020126480014br.gov.bcb.pix0126programadorwebti@gmail.com52040000530398654040.505802BR5921HEUDERRODRIGUESDESENA6009Sao Paulo62250521mpqrinter1292615668616304434D",
+        "qr_code_base64": "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",
+        "transaction_id": "PIXE32430233202510140203Lg1nBkG9Rqp",
+        "bank_transfer_id": 118937656239,
+        "financial_institution": 1,
+        "bank_info": {
+          "payer": {
+            "id": null,
+            "account_id": "2211556",
+            "long_name": "COOPERATIVA DE CRÉDITO CONEXÃO - SICOOB CONEXÃO",
+            "external_account_id": null,
+            "identification": []
+          },
+          "collector": {
+            "account_id": "90343682191",
+            "long_name": "MERCADO PAGO INSTITUIÇÃO DE PAGAMENTO LTDA.",
+            "account_holder_name": "Heuder Rodrigues de Sena",
+            "transfer_account_id": null
+          },
+          "is_same_bank_account_owner": "1",
+          "origin_bank_id": null,
+          "origin_wallet_id": null
+        },
+        "ticket_url": "https://www.mercadopago.com.br/payments/129261566861/ticket?caller_id=1364956526&hash=7b6aa986-5088-4d02-8861-e7d66c67857d",
+        "e2e_id": null
+      }
+    },
+    "accounts_info": null,
+    "tags": null,
+    "refunds": []
+  }
